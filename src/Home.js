@@ -7,7 +7,7 @@ class Home extends Component {
 		super(props);
 		this.state={
 			personList:[]
-		}
+		};
 	}
 	
 componentDidMount(){
@@ -16,7 +16,7 @@ componentDidMount(){
                 console.log(response.data.data);
                 let personList= response.data.data;
                 console.log(personList);
-                 this.setState({ personList });
+                 this.setState({ personList:personList });
                 
                 })
             
@@ -30,7 +30,7 @@ componentDidMount(){
 
 
     render() {
-    	let personList=this.state.personList;
+    	
         return (
             <div>
 				<div className="topnav">				 
@@ -38,7 +38,7 @@ componentDidMount(){
   					<button class="addbtn">New User</button>
   				</div>
   				<div>
-  				{personList.map(personList=>
+  				{this.state.personList.map(personList=>
                 	<Jobcard id={personList.id} person={personList} />)		
 				}
 				</div>
@@ -57,7 +57,7 @@ class Jobcard extends Component{
             <div>
 				<div className="content">
   					<div className="jobcard">
-  					<p>bxfxxfhxhxf{this.props.id}</p>
+  					<p>{this.props.id}</p>
   					</div>	
 			</div>
 			</div>

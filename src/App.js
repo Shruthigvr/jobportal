@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Login from './login.js';
 import Home from './Home.js';
 import ReactDOM from 'react-dom';

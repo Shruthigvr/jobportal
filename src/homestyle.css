@@ -52,17 +52,20 @@ body {
     margin-right: 20px;
     margin-bottom: 8px;
     cursor: pointer;
+    border-radius: 10%;
 
 }
 .jobcard{
    
-  	max-width: 300px;
+  	width: 200px;
+  	height: 250px;
   	margin: 60px;
   	margin-top: 30px;
     padding:30px;
   	text-align: left;
     float: left;
-  	background: teal;
+  	background: #325C74;
+  	border-radius: 10%;
     /*color: whitesmoke;*/
 }
 

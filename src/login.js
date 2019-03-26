@@ -21,7 +21,7 @@ class Login extends Component {
         return (
             <div className="main">
       	<div id="login">
-      		<p>LOG IN</p>
+      		<p className="loginHead">LOG IN</p>
       		<input type="email" id="mail" ref="email" placeholder="Enter Email ID"/>
       		<br/>
       		<input type="password" id="pwd" ref="pwd" placeholder="Enter Password"/>

@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './App.css';
 import Login from './login.js';
 import Home from './Home.js';
-import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
+import ReactDOM from 'react-dom';
+import {BrowserRouter as Router, Link,NavLink,Redirect} from 'react-router-dom';
+import Route from 'react-router-dom/Route';
 
 class App extends Component {
     render() {
         return (
-            <div className="App">
-        <Home/> 
-
-      </div>
+            <Router>
+              <div className="App">                
+                  <Route path = "/" exact component = {Login} />
+                  <Route path = "/Home" exact component = {Home} />        
+              
+              </div>
+            </Router>
         );
     }
 }

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+class Add extends Component {
+    
 
-class Login extends Component {
-
-    btnclick = () => {
-        axios.post("https://reqres.in/api/login", {
+   
+          btnclick = () => {
+        axios.post("https://reqres.in/users", {
                 email: this.refs.email.value,
                 password: this.refs.pwd.value
             })
@@ -17,20 +18,22 @@ class Login extends Component {
             })
     }
 
-    render() {
+
+   render() {
+
         return (
             <div className="main">
-      			<div id="login">
-      				<p className="loginHead">LOG IN</p>
-      				<input type="email" id="mail" ref="email" placeholder="Enter Email ID"/>
+            	<div id="new">
+      				<p className="loginHead">NEW USER</p>
+      				<input type="text" id="mail" ref="email" placeholder="Enter Email ID"/>
       				<br/>
       				<input type="password" id="pwd" ref="pwd" placeholder="Enter Password"/>
       				<br/>
-      				<button onClick={this.btnclick}>Login</button>
+      				<button onClick={this.btnclick}>Add</button>
         		</div>
-      		</div>
+				
+			</div>
         );
     }
 }
-
-export default Login;
+export default Add;

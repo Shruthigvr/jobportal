@@ -26,7 +26,7 @@ body {
  /* margin: 20px;*/
   padding-top: 30px;
 }
-#login {
+#login, #new{
     width: 50%;
     background: #2c3e50;
     height: 300px;
@@ -56,8 +56,8 @@ body {
     cursor: pointer;
 }
 
-#login>input,
-#login>button {
+#login #new>input,
+#login #new>button {
     margin-top: 20px;
     margin-left: 105px;
     height: 25px;

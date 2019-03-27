@@ -12,17 +12,9 @@ class Home extends Component {
 	
 componentDidMount(){
 				axios.get("https://reqres.in/api/users")
-            .then(function(response) {
-                console.log(response.data.data);
-                let personList= response.data.data;
-                console.log(personList);
-                 this.setState({ personList:personList });
-                
-                })
-            
-            .catch(function(error) {
-                console.log(error);
-                
+           
+            .then(item=>{const personList = item.data.data;
+            	this.setState({personList});
             })
 			
 	}	
@@ -38,8 +30,12 @@ componentDidMount(){
   					<button class="addbtn">New User</button>
   				</div>
   				<div>
-  				{this.state.personList.map(personList=>
-                	<Jobcard id={personList.id} person={personList} />)		
+  				{this.state.personList.map(person=>
+  					<div>
+                	<Jobcard id={person.id} firstName={person.first_name} />
+                	
+                	</div>
+                	)		
 				}
 				</div>
 			</div>
@@ -58,6 +54,7 @@ class Jobcard extends Component{
 				<div className="content">
   					<div className="jobcard">
   					<p>{this.props.id}</p>
+  					<p>{this.props.firstName}</p>
   					</div>	
 			</div>
 			</div>
